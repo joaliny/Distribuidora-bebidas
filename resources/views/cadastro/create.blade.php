@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Produto</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container mt-5">
-        <h1>Cadastrar Produto</h1>
+@extends('layouts.app')
+
+@section('content')
+<div class="d-flex justify-content-center">
+    <div class="col-md-8">
+        <h2 class="mb-4">➕ Cadastrar Produto</h2>
         <form action="{{ route('produtos.store') }}" method="POST">
             @csrf
             <div class="mb-3">
@@ -27,8 +22,8 @@
                 <label for="quantidade_estoque" class="form-label">Quantidade em Estoque</label>
                 <input type="number" class="form-control" id="quantidade_estoque" name="quantidade_estoque" required>
             </div>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>
     </div>
-</body>
-</html>
+</div>
+@endsection
